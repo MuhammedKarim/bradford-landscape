@@ -34,9 +34,9 @@
       fetch(API_URL)
         .then(res => res.json())
         .then(status => {
-          const dimOverlay = document.getElementById('dim-overlay');
-        //   const shouldShowDim = status.isLive && status.kalimat !== 'blank';
-        //   dimOverlay.style.display = shouldShowDim ? 'block' : 'none';
+        // const dimOverlay = document.getElementById('dim-overlay');
+        // const shouldShowDim = status.isLive && status.kalimat !== 'blank';
+        // dimOverlay.style.display = shouldShowDim ? 'block' : 'none';
           if (status.isLive) startKalimatPolling();
           else stopKalimatPolling();
         })
@@ -69,7 +69,7 @@
     }
 
     function startKalimatPolling() {
-      if (!kalimatInterval) kalimatInterval = setInterval(fetchKalimatStatus, 1000);
+      if (!kalimatInterval) kalimatInterval = setInterval(fetchKalimatStatus, 2000);
     }
 
     function stopKalimatPolling() {
